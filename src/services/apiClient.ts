@@ -4,7 +4,7 @@
  * Simply update the BASE_URL or add interceptors as needed.
  */
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.sioms-school.edu/v1';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://sioms-backend-production.up.railway.app';
 
 async function request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
   const token = typeof window !== 'undefined' ? localStorage.getItem('sioms_token') : null;
