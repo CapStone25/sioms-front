@@ -4,7 +4,12 @@
  * Simply update the BASE_URL or add interceptors as needed.
  */
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://sioms-backend-production.up.railway.app';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://sioms-backend-production.up.railway.app/api';
+
+// Log for debugging
+if (typeof window !== 'undefined') {
+  console.log('API Base URL:', BASE_URL);
+}
 
 async function request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
   const token = typeof window !== 'undefined' ? localStorage.getItem('sioms_token') : null;
